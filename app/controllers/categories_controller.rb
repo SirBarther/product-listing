@@ -9,18 +9,19 @@ class CategoriesController < ActionController::Base
   def create
     @category = Category.new(category_params)
     if @category.save
-
-      redirect_to root_path#, notice: "Success!"
+      redirect_to root_path
       flash[:notice] = "Success!"
     else
-
-      render "categories/new"#, notice: "Error!"
-      # flash[:notice] = "Error!"
+      render "categories/new"
     end
   end
 
-  private
+  def show
+    @category = Category.find(params[:id])
+    @products = Product.where(category_id: @category)
+  end
 
+  private
   def category_params
     params.require(:category).
     permit(:name)

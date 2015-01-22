@@ -9,3 +9,5 @@
 Category.create(name: "T-Shirts")
 Category.create(name: "Hoodies")
 Category.create(name: "Stickers")
+Product.create(name: "Black Launch Shirt", category_id: "1", price: "10.00")
+Product.create(name: "White Launch Shirt", category_id: "1", price: "11.00")
