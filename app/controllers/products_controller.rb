@@ -4,6 +4,7 @@ class ProductsController < ActionController::Base
 
   def new
     @product = Product.new
+    @category = Category.find(params[:category_id])
   end
 
   def create

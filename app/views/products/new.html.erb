@@ -1,4 +1,4 @@
-<h1>Create a new product</h1>
+<h1>Create a new <%= @category.name %></h1>
   <%= form_for @product, url: category_products_path do |f| %>
     <div>
       <%= f.label :name %>

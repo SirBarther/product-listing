@@ -1,10 +1,23 @@
-<h2><%= link_to "Create a new category", new_category_path %></h2>
   <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
-<h2> Click a category to view products or add new ones </h2>
+<h2> Categories </h2>
 <ul id="categories">
 <% @categories.each do |category| %>
-  <li><%= link_to category.name, category_path(category) %></li>
+  <li><%= link_to category.name, category_path(category) %>
+      <%= link_to "(Create)", new_category_product_path(category) %>
+  </li>
 <% end %>
+<h3><%= link_to "Create a new category", new_category_path %></h3>
+<h3>All products</h3>
+<ul>
+<% @products.each do |product| %>
+  <li id="bold"><%= product.category.name %></li>
+  <li id="bold"><%= product.name %></li>
+  <li><%= product.price %></li>
+  <li><%= product.description %></li>
+  <li></li>
+<% end %>
+</ul>
+
