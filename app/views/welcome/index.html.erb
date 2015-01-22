@@ -1,0 +1,9 @@
+<%= link_to "Create a new category", new_category_path %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<ul id="categories">
+<% @categories.each do |l| %>
+  <li><%= link_to l.name %></li>
+<% end %>

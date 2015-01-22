@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capybara', group: [:development, :test]
   gem 'pry', group: [:development, :test]
   gem 'factory_girl_rails', group: [:development, :test]
+  gem 'valid_attribute', group: [:development, :test]
 
 end
 

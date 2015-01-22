@@ -1,0 +1,26 @@
+<h1> Create a new category </h1>
+<%= form_for @category do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
+
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+    <h5> The following errors(s) occurred: </h5>
+    <ul>
+
+    <% @category.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+    </div>
+  <% end %>
