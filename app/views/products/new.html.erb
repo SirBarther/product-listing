@@ -1,27 +1,27 @@
-<h1>Create a new <%= @category.name %></h1>
-  <%= form_for @product, url: category_products_path do |f| %>
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div>
-      <%= f.label :price %>
-      <%= f.text_field :price %>
-    </div>
-    <div>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-    </div>
-      <%= f.hidden_field :category_id, value: params[:category_id] %>
-      <%= f.submit "Submit"%>
-    </div>
-  <% end %>
+<div id ="wrapper">
+  <h1>Create a new <%= @category.name %></h1>
+  <%= link_to "Home", root_path %>
+    <%= form_for @product, url: category_products_path do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </div>
+      <div>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </div>
+        <%= f.hidden_field :category_id, value: params[:category_id] %>
+        <%= f.submit "Submit"%>
+      </div>
+    <% end %>
 
+  <ul>
     <% @product.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
-    </ul>
-    </div>
-
-</body>
-
+  </ul>
+</div>

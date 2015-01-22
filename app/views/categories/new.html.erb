@@ -1,22 +1,26 @@
 <h3> Create a new category </h3>
-<%= form_for @category do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+<%= link_to "Home", root_path %>
+
+<div id ="wrapper">
+  <%= form_for @category do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
 
   <% if @category.errors.any? %>
     <div id="error_explanation">
-    <h5> The following errors(s) occurred: </h5>
-    <ul>
-
-    <% @category.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
+      <h5> The following errors(s) occurred: </h5>
+      <ul>
+        <% @category.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
+</div>

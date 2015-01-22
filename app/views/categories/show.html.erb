@@ -1,7 +1,9 @@
-<h1><%= @category.name %></h1><%= link_to "Home", root_path %>
+<div id ="wrapper">
 
-<ul>
-  <% @products.each do |product| %>
-    <li><%= product.name %></li>
-  <% end %>
-</ul>
+  <h1><%= @category.name %></h1><%= link_to "Home", root_path %>
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+</div>
