@@ -1,4 +1,4 @@
-<h4>Categories <%= link_to "(Create)", new_category_path %></h4>
+<h4>Categories <%= link_to "(Create)", new_category_path, id: "cat_create" %></h4>
 <%= link_to "Home", root_path %>
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
@@ -8,7 +8,7 @@
   <ul id="categories">
   <% @categories.each do |category| %>
     <li><%= link_to category.name, category_path(category) %>
-        <%= link_to "(Create)", new_category_product_path(category), class: "create" %>
+        <%= link_to "(Create)", new_category_product_path(category), id: "prod_create" %>
     </li>
   <% end %>
   <h4>All products</h4>

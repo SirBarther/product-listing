@@ -23,7 +23,7 @@ feature "User creates a category", %Q{
 
     visit root_path
 
-    click_on "Create a new category"
+    find('#cat_create').click
 
     fill_in "Name", with: category.name
 
@@ -38,7 +38,7 @@ feature "User creates a category", %Q{
 
     visit root_path
 
-    click_on "Create a new category"
+    find('#cat_create').click
 
     fill_in "Name", with: cat1.name
 
@@ -51,7 +51,7 @@ feature "User creates a category", %Q{
 
     visit root_path
 
-    click_on "Create a new category"
+    find('#cat_create').click
 
     fill_in "Name", with: ""
 

@@ -10,7 +10,7 @@ feature "User creates a product", %Q{
 
   Acceptance Criteria:
 
-  [] - I must specify a name of the product,
+  [X] - I must specify a name of the product,
         a price, a category, and an optional description
 } do
 
@@ -20,9 +20,7 @@ feature "User creates a product", %Q{
 
     visit root_path
 
-    click_on category.name
-
-    click_on "New!"
+    find('#prod_create').click
 
     fill_in "Name", with: product.name
     fill_in "Price", with: product.price
@@ -38,9 +36,7 @@ feature "User creates a product", %Q{
 
     visit root_path
 
-    click_on category.name
-
-    click_on "New!"
+    find('#prod_create').click
 
     fill_in "Price", with: "a"
 
@@ -51,3 +47,5 @@ feature "User creates a product", %Q{
     expect(page).to have_content "Price is not a number"
   end
 end
+
+
